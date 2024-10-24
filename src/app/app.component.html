@@ -16,9 +16,11 @@
       <div class="header__left">
         <div class="header__logo"><img src="../assets/Frame.svg" alt="logo"></div>
         <nav class="header__up">
-          <div class="nav__item">Главная</div>
-          <div class="nav__item">O компании</div>
-          <div class="nav__item">Каталог</div>
+          <div class="nav__item">{{headerItem1}}</div>
+          <div class="nav__item">{{aboutCompany}}</div>
+          <div class="nav__item" *ngIf="isShowCatalog">{{headerItem3}}</div>
+          <button (click)="isShowCatalog = !isShowCatalog">Скрыть/Показать каталог</button>
+          <button (click)="changeMenuText()">Большой/Маленький шрифт</button>
         </nav>
       </div>
       <div class="header__right">
@@ -37,13 +39,11 @@
       <div class="hl_left">
         <div class="catalog">
           <img src="../assets/light.svg" alt="" class="catalog__img">
-          <p class="catalog__txt">Каталог</p>
+          
+          
         </div>
         <nav class="nav__header__low">
-          <div class="hl__item">Стройматериалы</div>
-          <div class="hl__item">Инструменты</div>
-          <div class="hl__item">Электрика</div>
-          <div class="hl__item">Интерьер и одежда</div>
+          <div class="hl__item" *ngFor="let item of menuItems">{{item}}</div>
         </nav>
       </div>
       <div class="hl__right">
@@ -52,10 +52,11 @@
           <img src="../assets/map-pin (2) 1.svg" alt="" class="location__img">
           <p class="location__txt">Москва</p>
         </div>
+        <button (click)="isShowPromo = !isShowPromo">Открыть/Скрыть фото</button>
       </div>
     </div>
     <div class="promo">
-      <img src="../assets/баннер.png" alt="" class="promo">
+      <img src="../assets/баннер.png" alt="" class="promo" *ngIf="isShowPromo">
     </div>
     <div class="container">
       <div class="shop__pluss">
@@ -76,11 +77,7 @@
       </div>
       <div class="product">
         <div class="product__page">
-          <button class="product__page__btn">1</button>
-          <button class="product__page__btn">2</button>
-          <button class="product__page__btn">3</button>
-          <button class="product__page__btn">4</button>
-          <button class="product__page__btn">5</button>
+          <button *ngFor="let item of newPages" class="product__page__btn">{{item}}</button>
         </div>
         <div class="product__assort">
           <div class="product__assort__big pa__item">

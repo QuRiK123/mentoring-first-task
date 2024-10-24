@@ -97,6 +97,9 @@ body {
 
 .catalog__txt {
     font-family: Inter;
+    font-weight: 600;
+    font-style: 17px;
+    color: rgba(60, 60, 59, 1);
 }
 
 .nav__header__low {
@@ -106,6 +109,9 @@ body {
 .hl__item {
     padding-right: 24px;
     font-family: Inter;
+    font-weight: 600;
+    font-style: 17px;
+    color: rgba(60, 60, 59, 1);
 }
 
 .hl__right {
@@ -138,6 +144,7 @@ body {
 
 .promo {
     background: no-repeat;
+    width: 100%;
 }
 
 .shop__pluss {
@@ -287,6 +294,7 @@ body {
     font-size: 28px;
     font-weight: 600;
     margin: 16px;
+
     &__4 {
         flex-basis: 100%;
     }
